@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produção Consciente | Sustentabilidade e Futuro</title>
+  <meta name="description" content="Descubra como a produção consciente transforma a indústria através da reciclagem, uso de energia limpa e respeito ao meio ambiente.">
+  <!-- Link para o CSS criado anteriormente -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Estilos extras específicos para o layout do HTML atual (Filtros e Contadores) -->
+  <style>
+    .filter-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto 0 auto;
+      max-width: 600px;
+    }
+    .filter-btn {
+      background-color: transparent;
+      border: 2px solid var(--clr-primary);
+      color: var(--clr-primary);
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+    }
+    .impact-section {
+      background-color: var(--clr-dark);
+      color: var(--clr-white);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .impact-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto 0 auto;
+    }
+    .counter-item {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .eco-counter {
+      display: block;
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: var(--clr-primary-light);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. CABEÇALHO & NAVEGAÇÃO -->
+  <header class="eco-header">
+    <a href="#" class="logo">
+      <span>🌱</span> Produção Consciente
+    </a>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#inicio" class="nav-link active">Início</a></li>
+        <li><a href="#pilares" class="nav-link">Pilares</a></li>
+        <li><a href="#impacto" class="nav-link">Nosso Impacto</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 2. SEÇÃO HERO (Apresentação Principal) -->
+    <section id="inicio" class="hero">
+      <h1>Produzir com inteligência.<br>Preservar para o futuro.</h1>
+      <p>Unimos tecnologia de ponta e responsabilidade ecológica para criar processos industriais que respeitam os limites do nosso planeta.</p>
+      <a href="#pilares" class="btn btn-primary">Conheça Nossas Práticas</a>
+    </section>
+
+    <!-- 3. SEÇÃO DE PILARES (Com Filtro Dinâmico via JS) -->
+    <section id="pilares">
+      <div style="text-align: center; padding: 2rem 2rem 0 2rem;">
+        <h2>Nossos Pilares de Atuação</h2>
+        <p>Clique nos botões abaixo para filtrar nossas iniciativas de produção sustentável.</p>
+      </div>
+
+      <!-- Botões de Controle do Filtro (script.js) -->
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="energia">Energia</button>
+        <button class="filter-btn" data-filter="reciclagem">Reciclagem</button>
+      </div>
+
+      <!-- Grid de Cards Modificados com Transição CSS -->
+      <div class="grid-container">
+        <div class="eco-card" data-category="energia" style="transition: opacity 0.3s ease, transform 0.3s ease;">
+          <h3>Energia Renovável</h3>
+          <p>Nossa matriz energética é 100% limpa, utilizando fontes solares e eólicas para alimentar todo o ecossistema de manufatura.</p>
+        </div>
+
+        <div class="eco-card" data-category="reciclagem" style="transition: opacity 0.3s ease, transform 0.3s ease;">
+          <h3>Logística Reversa</h3>
+          <p>Garantimos o ciclo completo do produto. Coletamos e reciclamos embalagens e itens antigos descartados pelos consumidores.</p>
+        </div>
+
+        <div class="eco-card" data-category="reciclagem" style="transition: opacity 0.3s ease, transform 0.3s ease;">
+          <h3>Desperdício Zero</h3>
+          <p>Otimizamos o uso de matérias-primas na linha de montagem, reinserindo sobras e aparas diretamente no início do processo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SEÇÃO DE IMPACTO (Com Animador de Números via JS) -->
+    <section id="impacto" class="impact-section">
+      <h2>O Impacto Real das Nossas Escolhas</h2>
+      <p>Resultados coletados e auditados em tempo real na nossa cadeia produtiva deste ano.</p>
+      
+      <div class="impact-grid">
+        <div class="counter-item">
+          <span class="eco-counter" data-target="1500">0</span> Litros de água poupados
+        </div>
+        <div class="counter-item">
+          <span class="eco-counter" data-target="250">0</span> Toneladas de CO₂ evitadas
+        </div>
+        <div class="counter-item">
+          <span class="eco-counter" data-target="98">0</span> % de resíduos reaproveitados
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. RODAPÉ -->
+  <footer id="contato" class="eco-footer">
+    <p>&copy; 2026 Produção Consciente. Desenvolvido com foco no planeta.</p>
+    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--clr-earth);">Consuma com responsabilidade.</p>
+  </footer>
+
+  <!-- Link para o JavaScript criado anteriormente -->
+  <script src="script.js"></script>
+</body>
+</html>
