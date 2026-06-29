@@ -1,0 +1,193 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE DESIGN (Tema Eco-Consciente)
+   ========================================================================== */
+:root {
+  /* Paleta de Cores Planeta/Terra */
+  --clr-primary: #2d6a4f;       /* Verde floresta profundo (Confiança/Natureza) */
+  --clr-primary-light: #52b788; /* Verde folha vivo (Destaques/Ações) */
+  --clr-accent: #d8f3dc;        /* Verde menta suave (Fundos secundários) */
+  --clr-earth: #b1a7a6;         /* Cinza terra neutro */
+  --clr-dark: #1b4332;          /* Verde quase preto para textos legíveis */
+  --clr-light: #f8f9fa;         /* Branco reciclado/creme para fundo principal */
+  --clr-white: #ffffff;
+  
+  /* Tipografia */
+  --ff-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Espaçamentos e Bordas */
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --transition-fast: all 0.3s ease;
+  --shadow: 0 4px 20px rgba(27, 67, 50, 0.08);
+}
+
+/* ==========================================================================
+   2. RESET & ESTILOS GERAIS
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-main);
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   3. COMPONENTES E LAYOUT
+   ========================================================================== */
+
+/* Cabeçalho / Navegação */
+.eco-header {
+  background-color: var(--clr-white);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--clr-primary-light);
+}
+
+/* Seção Hero (Destaque Principal) */
+.hero {
+  background: linear-gradient(135deg, var(--clr-accent) 0%, #ffffff 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-radius: var(--radius-md);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--clr-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: var(--clr-dark);
+}
+
+/* Botões Sustentáveis */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  border-radius: 50px; /* Bordas arredondadas orgânicas */
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-primary-light);
+  transform: translateY(-2px);
+}
+
+/* Grid de Pilares / Produtos Conscientes */
+.grid-container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.eco-card {
+  background-color: var(--clr-white);
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  border-top: 5px solid var(--clr-primary-light);
+  transition: var(--transition-fast);
+}
+
+.eco-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(27, 67, 50, 0.15);
+}
+
+.eco-card h3 {
+  color: var(--clr-primary);
+  margin-bottom: 1rem;
+}
+
+/* Rodapé Eco */
+.eco-footer {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 6rem;
+}
+
+/* ==========================================================================
+   4. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .eco-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-menu {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
